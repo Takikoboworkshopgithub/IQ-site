@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>IQ Access Portal</title>
+    <style>
+      body {
+        font-family: 'Times New Roman';
+        background-color: #c0c0c0;
+      }
+      .container {
+        width: 320px;
+        margin: 80px auto;
+        padding: 20px;
+        background: #ffffff;
+        border: 2px solid #000080;
+      }
+      input[type='text'],
+      input[type='password'] {
+        width: 95%;
+        margin-bottom: 10px;
+        padding: 4px;
+        border: 1px solid #808080;
+      }
+      button {
+        width: 100%;
+        padding: 6px;
+        border: 1px solid #000080;
+        background: #e0e0ff;
+      }
+      .note {
+        font-size: 12px;
+        color: #404040;
+      }
+    </style>
+    <script>
+      function login() {
+        const id = document.getElementById('id').value;
+        const pw = document.getElementById('pw').value;
+
+        if (id === 'admin' && pw === 'admin') {
+          window.location.href = 'Integrated_Quality.html';
+        } else {
+          alert('認証失敗: ID または Password が正しくありません。');
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h3>IQ Portal Login</h3>
+      <p>ID と Password を入力してください。</p>
+
+      <input type="text" id="id" placeholder="Login ID" /><br />
+      <input type="password" id="pw" placeholder="Password" /><br />
+
+      <button onclick="login()">Enter</button>
+
+      <p class="note">
+        ※このアクセスは監視されています<br />
+        ※不明な場合は管理者へ連絡してください
+      </p>
+    </div>
+  </body>
+</html>

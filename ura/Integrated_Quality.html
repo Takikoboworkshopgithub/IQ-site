@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>裏IQ / Integrated Quality Archive</title>
+    <style>
+      body {
+        background-color: #000000;
+        color: #00ffcc;
+        font-family: 'Courier New', monospace;
+        margin: 20px;
+      }
+      .box {
+        border: 2px solid #00ffcc;
+        padding: 15px;
+        margin-bottom: 20px;
+      }
+      h1 {
+        color: #00ffff;
+        text-align: center;
+      }
+      a {
+        color: #88ffff;
+      }
+    </style>
+
+    <script>
+      // ページ読み込み時にポップアップ
+      window.onload = function () {
+        alert('ようこそ。');
+      };
+
+      // コンソールに永続的にログ打印
+      /*for (let i = 0; i < Infinity; i++) {
+        console.log('この通信はブロックされています。');
+      }*/
+
+      // さらに “止められない感” を出したい場合はこちらも使える
+      // (無限ループではなく setInterval の場合、ブラウザ負荷が軽め)
+
+      setInterval(() => {
+        //console.log('この通信はブロックされています。');
+        //console.log('この通信にはノイズが含まれます。');
+        console.log(generateNoise());
+      }, 20);
+
+      // 無意味な文字列を生成する関数
+      function generateNoise() {
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!?#$%&*/+-()[]{}';
+        let noise = '';
+        const length = Math.floor(Math.random() * 10) + 10; // 10〜40文字くらいのノイズ
+
+        for (let i = 0; i < length; i++) {
+          noise += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+
+        return 'admin/>' + noise + ' -> ' + noise;
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>裏IQ / Integrated Quality</h1>
+
+    <div class="box">
+      <h2>[Archive Node 01]</h2>
+      <p>
+        あなたは統合されました。<br />
+        あなたは既に "統合された質" のひとり。<br /><br />
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>[Navigation]</h2>
+      <p><a href="../index.html">戻る</a><br /></p>
+    </div>
+  </body>
+</html>
